@@ -1,0 +1,11 @@
+---
+- name: Test Ansible Playbook
+  hosts: local
+  tasks:
+    - name: ping localhost
+      ansible.builtin.ping:
+
+    - name: create a test file
+      ansible.builtin.file:
+        path: ~/devops/week1-linux-cli/ansible-test/ansible_test_file.txt
+        state: touch
