@@ -1,0 +1,16 @@
+---
+
+- name: Create DevOps users
+  hosts: local
+  become: yes
+  tasks:
+    - name: Create devuser1
+      ansible.builtin.user:
+        name: devuser1
+        state: present
+
+    - name: Create devuser2
+      ansible.builtin.user:
+        name: devuser2
+        state: present
+
