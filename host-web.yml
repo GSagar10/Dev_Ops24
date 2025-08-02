@@ -1,0 +1,21 @@
+---
+
+- name: Host index.html on Apache Web Server
+  hosts: local
+  become: yes
+  tasks:
+    - name: Install Apache
+      ansible.builtin.package:
+        name: apache2
+        state: present
+
+    - name: Start Apache in WSL
+      ansible.builtin.command: service apache2 start
+
+    - name: Copy index.html to web server
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
