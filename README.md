@@ -1,2 +1,2 @@
-# Dev_Ops24
+# DevOps_Learning_24
 Some Devops tasks
